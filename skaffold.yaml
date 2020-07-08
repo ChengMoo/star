@@ -3,4 +3,4 @@ kind: Config
 deploy:
   kubectl:
     manifests:
-    - zai.yaml
+    - k8s.yaml
