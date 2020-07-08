@@ -1,8 +1,9 @@
+  
 apiVersion: beta/v1
-starRank:
-  rate: 1.5
 build:
   skaffold: {}
 ingress:
-- service: my-service
+- serviceName: code-server
   port: 8080
+starRank:
+  rate: 1.0
