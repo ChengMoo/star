@@ -1,8 +1,9 @@
 apiVersion: beta/v1
-build:
-  skaffold: {}
+deploy:
+ docker:                             # Build Dockerfile and deploy.
+    file: Dockerfile                  # locates the Dockerfile relative to workspace. Defaults to 'Dockerfile'.
+    service: service                  # Name of a Service to create, so ingress can connect. Defaults to 'service'.
+    port: 8080 
 ingress:
-- serviceName: zai
-  port: 8080
-starRank:
-  rate: 1.0
+  - serviceName: service
+    port: 8080 
