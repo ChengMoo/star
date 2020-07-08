@@ -36,11 +36,8 @@ kind: Service
 metadata:
   name: zai
 spec:
-  type: ClusterIP  
   ports:
-  - name: "http-port-tcp"
+  - name: http
     port: 8080
-    targetPort: 8080
-    protocol: TCP
   selector:
     app: zai
