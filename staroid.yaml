@@ -2,7 +2,7 @@ apiVersion: beta/v1
 build:
   skaffold: {}
 ingress:
-- serviceName: code-server
+- serviceName: zai
   port: 8080
 starRank:
   rate: 1.0
