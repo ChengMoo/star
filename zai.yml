@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zai
+spec:
+  selector:
+    matchLabels:
+      app: zai
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: zai
+    spec:
+      containers:
+      - name: zai
+        image: chengmoo/v2ray-openshift
+        imagePullPolicy: Always
+        resources:
+         requests:
+          cpu: 3m
+          memory: 16Mi
+         limits:
+          cpu: 6m
+          memory: 32Mi
+        ports:
+        - containerPort: 8080
+        env:
+        - name: CONFIG_JSON
+          value: '{"inbounds":[{"port":8080,"protocol":"vmess","settings":{"clients":[{"id":"ad806487-2d26-4636-98b6-ab85cc8521f7","alterId":64}]},"streamSettings":{"network":"ws","wsSettings":{"path":"/ws"}}}],"outbounds":[{"protocol":"freedom","settings":{}}]}'
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: zai
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  type: ClusterIP  
+  ports:
+  - name: "http-port-tcp"
+    port: 8080
+    targetPort: 8080
+    protocol: TCP
+  selector:
+    app: zai
