@@ -1,6 +1,8 @@
 apiVersion: beta/v1
 build:
   skaffold: {}
+deploy:
+  implements: ChengMoo/staroid
 ingress:
 - serviceName: code-server
   port: 8080
