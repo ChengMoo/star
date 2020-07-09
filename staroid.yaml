@@ -1,4 +1,3 @@
-  
 apiVersion: beta/v1
 build:
   skaffold: {}
