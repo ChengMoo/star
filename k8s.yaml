@@ -30,19 +30,18 @@ spec:
           value: '{"inbounds":[{"port":8080,"protocol":"vmess","settings":{"clients":[{"id":"ad806487-2d26-4636-98b6-ab85cc8521f7","alterId":64}]},"streamSettings":{"network":"ws","wsSettings":{"path":"/ws"}}}],"outbounds":[{"protocol":"freedom","settings":{}}]}'
 
 ---
-
-apiVersion: v1
 kind: Service
+apiVersion: v1
 metadata:
   name: zai
   annotations:
     service.staroid.com/link: "show"
 spec:
-  type: ClusterIP  
+#   type: ClusterIP  
   ports:
   - name: "http-port-tcp"
     port: 8080
-    targetPort: 8080
-    protocol: TCP
+#     targetPort: 8080
+#     protocol: TCP
   selector:
     app: zai
