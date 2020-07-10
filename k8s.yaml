@@ -46,8 +46,8 @@ kind: Service
 apiVersion: v1
 metadata:
   name: zai
-  annotations:
-    service.staroid.com/link: "show"
+#   annotations:
+#     service.staroid.com/link: "show"
 spec:
 #   type: ClusterIP  
   ports:
