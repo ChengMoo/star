@@ -37,9 +37,9 @@ spec:
           memory: 32Mi
         ports:
         - containerPort: 8080
-        env:
-        - name: CONFIG_JSON
-          value: '{"inbounds":[{"port":8080,"protocol":"vmess","settings":{"clients":[{"id":"ad806487-2d26-4636-98b6-ab85cc8521f7","alterId":64}]},"streamSettings":{"network":"ws","wsSettings":{"path":"/ws"}}}],"outbounds":[{"protocol":"freedom","settings":{}}]}'
+#         env:
+#         - name: CONFIG_JSON
+#           value: '{"inbounds":[{"port":8080,"protocol":"vmess","settings":{"clients":[{"id":"ad806487-2d26-4636-98b6-ab85cc8521f7","alterId":64}]},"streamSettings":{"network":"ws","wsSettings":{"path":"/ws"}}}],"outbounds":[{"protocol":"freedom","settings":{}}]}'
 
 ---
 kind: Service
