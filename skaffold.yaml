@@ -2,7 +2,7 @@ apiVersion: skaffold/v2beta1
 kind: Config
 build:
   artifacts:
-    - image: jstaroid
+    - image: staroid
       context: .
       docker:
         dockerfile: Dockerfile
