@@ -1,5 +1,11 @@
 apiVersion: skaffold/v2beta1
 kind: Config
+build:
+  artifacts:
+    - image: jstaroid
+      context: .
+      docker:
+        dockerfile: Dockerfile
 deploy:
   kubectl:
     manifests:
