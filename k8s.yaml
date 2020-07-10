@@ -13,7 +13,7 @@ spec:
     metadata:
       labels:
         app: zai
-#         pod.staroid.com/isolation: dedicated
+        pod.staroid.com/isolation: dedicated
 #         pod.staroid.com/instance-type: standard-2
     spec:
       automountServiceAccountToken: true
